@@ -1,0 +1,30 @@
+<image style="width:100%; height: 300px; " src="{{img}}" ></image>
+<text class="tips" wx:if="{{ishow}}">请先选择图片!</text>
+<button bindtap="chooseimgTap">选择图片</button>
+<button bindtap="plantTap" class="btn" type="primary">植物识别</button> 
+<!-- 返回结果 -->
+<!-- <view class="result-content">{{content}}</view> -->
+<view class="">
+    <!-- 列表 -->
+        <wux-refresher id="refresher-0" bind:pulling="onPulling" bind:refresh="onRefresh" distance="50">
+            <block>
+                <view class="cu-card article">
+                    <navigator wx:for="{{info_list}}" bind:longpress="Menu" data-item='{{item}}' wx:key class="cu-item shadow" url='./info/info?id={{item._id}}&img={{item.baike_info.image_url}}&title={{item.name}}&content={{item.baike_info.description}}'>
+                        <view class="title">{{item.name}}</view>
+                        <view class="content">
+                            <image src="{{item.baike_info.image_url}}" mode="aspectFill"></image>
+                            <view class="desc">
+                                <view class='text-content'>{{item.baike_info.description}}</view>
+                                <view>
+                                    <view class='cu-tag bg-blue light sm round'>相似度</view>
+                                    <view class='cu-tag bg-yellow light sm round'>{{item.score}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view wx:if="{{items.info_list.length>3}}" class="cu-load padding-bottom-xs {{items.moreStatus}}"></view>
+            </block>
+        </wux-refresher>
+    <view class='division'></view>
+</view>

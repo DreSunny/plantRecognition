@@ -1,0 +1,28 @@
+<!--pages/history/history.wxml-->
+<view class="">
+    <!-- 列表 -->
+        <wux-refresher id="refresher-0" bind:pulling="onPulling" bind:refresh="onRefresh" distance="50">
+            <block>
+                <view class="cu-card article">
+                    <navigator wx:for="{{info_list}}" bind:longpress="Menu" data-item='{{item}}' wx:key class="cu-item shadow" url='/pages/info/detail/detail?id={{item.data.plantID}}&img={{item.data.coverURL}}'>
+                        <view class="title">{{item.data.name}}</view>
+                        <view class="content">
+                            <image src="{{item.data.coverURL}}" mode="aspectFill"></image>
+                          
+                            <view class="desc">
+                                <view>
+                                    <view class='cu-tag bg-blue light sm round'>英文名</view>
+                                    <view class='cu-tag bg-yellow light sm round'>{{item.data.engName}}</view>
+                                </view>
+                                <view class='text-content'>
+                                    {{item.data.area}}
+                                </view>    
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+      
+            </block>
+        </wux-refresher>
+    <view class='division'></view>
+</view>

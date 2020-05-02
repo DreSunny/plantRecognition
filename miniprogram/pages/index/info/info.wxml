@@ -1,0 +1,15 @@
+<block wx:if="{{idInformationInfo.title}}">
+    <scroll-view scroll-y scroll-with-animation scroll-top='{{scrollTop}}' style="height:{{ViewHeight}}px;padding:{{CustomBar}}px 0 0rpx 0">
+        <view class="padding-lr padding-top">
+            <view class="img">
+                <image mode="widthFix" src="{{imgurl}}" style="width:100%" />
+            </view>
+            <view class="solid-bottom text-black text-lg padding margin-tb">
+                <text class="text-black">{{idInformationInfo.title}}</text>
+            </view>
+            <view class='text-df text-grey padding' style="line-height:60rpx">
+                {{idInformationInfo.content}}
+            </view>
+        </view>
+    </scroll-view>
+</block>

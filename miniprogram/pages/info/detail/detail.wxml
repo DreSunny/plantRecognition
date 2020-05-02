@@ -1,0 +1,39 @@
+<!--pages/info/detail/detail.wxml-->
+<block wx:if="{{res.name}}">
+    <scroll-view scroll-y scroll-with-animation scroll-top='{{scrollTop}}' style="height:{{ViewHeight}}px;padding:{{CustomBar}}px 0 0rpx 0">
+        <view class="padding-lr padding-top">
+            <view class="img">
+                <image mode="widthFix" src="{{imgurl}}" style="width:100%" />
+            </view>
+            <view class="solid-bottom text-black text-lg padding margin-tb">
+                名称：<text class="text-black">{{res.name}}</text>
+            </view>
+            <view class="solid-bottom text-black text-lg padding margin-tb">
+                别称：<text class="text-black">{{res.alias}}</text>
+            </view>
+            <view class="solid-bottom text-black text-lg padding margin-tb">
+                英文名：<text class="text-black">{{res.engName}}</text>
+            </view>
+            <view class="solid-bottom text-black text-lg padding margin-tb">
+                <view class='cu-tag bg-red light round'>{{res.phylum}}</view>
+                <view class='cu-tag bg-red light round'>{{res.class}}</view>
+                <view class='cu-tag bg-red light round'>{{res.order}}</view>
+                <view class='cu-tag bg-red light round'>{{res.family}}</view>
+                <view class='cu-tag bg-red light round'>{{res.genus}}</view>
+            </view>
+            <view class='text-df text-grey padding' style="line-height:60rpx">
+              <view class='cu-tag bg-blue light round'>简介</view>
+              {{res.des}}
+            </view>
+            <view class='text-df text-grey padding' style="line-height:60rpx">
+              <view class='cu-tag bg-green light round'>特点</view>
+              {{res.feature}}
+            </view>
+            <view class='text-df text-grey padding' style="line-height:60rpx">
+              <view class='cu-tag bg-yellow light round'>护理知识</view>
+              {{res.careKnowledge}}
+            </view>
+        </view>
+    </scroll-view>
+</block>
+

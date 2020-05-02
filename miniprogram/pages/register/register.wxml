@@ -1,0 +1,41 @@
+<!--pages/register/register.wxml-->
+<view class='usercenter'>
+  <image class='bg' src='/images/user/bg.png'></image>
+    <view class='head'>
+    <image class='headphoto' src="{{userInfo.wechatUserData.avatarUrl}}"></image>
+    </view>
+</view>
+
+<form bindsubmit="formSubmit">
+<!--基本信息盒模型  -->
+<view class='basic'>
+  <text class='basictext'>基本信息</text>
+
+  <!--名字部分  -->
+  <view class='namebox'>
+    <text class='name'>姓名</text>
+    <image class='nameicon' src='/images/user/righticon.png'></image>
+    <input placeholder-class='textcolor' name="username" value="{{username}}" class='nametext' ></input>
+  </view>
+
+  <!--手机号部分  -->
+  <view class='namebox'>
+    <text class='name'>手机号</text>
+    <image class='nameicon' src='/images/user/righticon.png'></image>
+    <input placeholder-class='textcolor' name="tel" value="{{tel}}" class='nametext'></input>
+  </view>
+
+  <!--性别-->
+  <view class='namebox'>
+    <text class='name'>性别</text>
+    <image class='nameicon' src='/images/user/righticon.png'></image>
+    <picker bindchange="pickGender" value="{{gender[gIndex]}}" range="{{gender}}">
+      <input  placeholder-class='textcolor' name="gender" value="{{gender[gIndex]}}"  class='nametext'></input>
+    </picker>
+  </view>
+
+
+</view>
+
+<button class="back" wx:if="{{manageStatus}}" formType="submit">{{buttonname}}</button>
+</form>

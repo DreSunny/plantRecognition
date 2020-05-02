@@ -1,0 +1,33 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <navigator class="userinfo" url='/pages/login/login'>
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <text wx:if="{{userInfo}}" class="userinfo-nickname">{{ userInfo.nickName }}</text>
+    <image wx:if="{{!userInfo}}" class="userinfo-avatar" src='https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180727/150547696d798c.png' background-size="cover"></image>
+		<text wx:if="{{!userInfo}}" class="userinfo-nickname">点击登陆</text>
+	</navigator>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item" style='background:none;display:flex;flex-direction:column;height:auto;'></view>
+  
+  <view class="user-menu">
+    <view class="item">
+      <navigator url="/pages/history/history" class="a">
+        <text class="icon security"></text>
+        <text class="txt">我的足迹</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/register/register?title=个人中心" class="a">
+        <text class="icon phone"></text>
+        <text class="txt">个人中心</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <!-- <navigator url="" class="a">
+        <text class="icon security"></text>
+        <text class="txt"></text>
+      </navigator> -->
+    </view>
+  
+  </view>
+</view>
